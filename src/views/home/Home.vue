@@ -18,7 +18,7 @@
     name: "Home",
     data() {
       return {
-        banners: getPicture(3),
+        banners: getPicture(5),
         recommends: []
       }
     }
