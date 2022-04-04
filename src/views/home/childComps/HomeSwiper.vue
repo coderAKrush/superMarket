@@ -2,7 +2,7 @@
   <swiper>
     <swiper-item v-for="(item, index) in banners" :key="index">
       <img :src="item" alt="">
-    </swiper-item>
+    </swiper-item> 
   </swiper>
 </template>
 
