@@ -4,7 +4,7 @@
     <home-swiper :banners="banners"/>
     <recommend-view :recommends="recommends" :recommendsText="recommendsText"/>
     <feature-view/>
-    <tab-control :titles="titles"/>
+    <tab-control class="tab-Control" :titles="titles"/>
     <ul>
       <li>列表1</li>
       <li>列表2</li>
@@ -102,7 +102,12 @@
         banners: getPicture(5),
         recommends: getPicture(4),
         recommendsText: ["1", "2", "3", "4"],
-        titles: ["销量", "折扣", "最新"]
+        titles: ["销量", "折扣", "最新"],
+        goods: {
+          'sell': {page: 0, list: []},
+          'discount': {page: 0, list: []},
+          'latest': {page: 0, list: []}
+        }
       }
     }
   }
@@ -120,6 +125,10 @@
     right: 0;
     top: 0;
     z-index: 1;
+  }
+  .tab-Control {
+    position: sticky;
+    top: 44px;
   }
 
 </style>
