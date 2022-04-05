@@ -5,6 +5,7 @@
     <recommend-view :recommends="recommends" :recommendsText="recommendsText"/>
     <feature-view/>
     <tab-control class="tab-Control" :titles="titles"/>
+    <goods-list :goods="goods.sell.list"/>
     <ul>
       <li>列表1</li>
       <li>列表2</li>
@@ -87,6 +88,7 @@
   import FeatureView from './childComps/FeatureView.vue'
   import getPicture from 'components/common/mock/mocks'
   import TabControl from 'components/content/tabControl/TabControl.vue'
+  import GoodsList from '../../components/content/goods/GoodsList.vue'
 
   export default {
     components: { 
@@ -95,6 +97,7 @@
       RecommendView,
       FeatureView,
       TabControl,
+      GoodsList,
     },
     name: "Home",
     data() {
@@ -104,9 +107,9 @@
         recommendsText: ["1", "2", "3", "4"],
         titles: ["销量", "折扣", "最新"],
         goods: {
-          'sell': {page: 0, list: []},
-          'discount': {page: 0, list: []},
-          'latest': {page: 0, list: []}
+          'sell': {list: getPicture(10)},
+          'discount': {list: getPicture(10)},
+          'latest': {list: getPicture(10)}
         }
       }
     }
