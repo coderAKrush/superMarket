@@ -22,7 +22,11 @@ export default {
 </script>
 <style scoped>
   .goods {
+    width: auto;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-around;
   }
 </style>

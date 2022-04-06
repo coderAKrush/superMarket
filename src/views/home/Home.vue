@@ -4,8 +4,8 @@
     <home-swiper :banners="banners"/>
     <recommend-view :recommends="recommends" :recommendsText="recommendsText"/>
     <feature-view/>
-    <tab-control class="tab-Control" :titles="titles"/>
-    <goods-list :goods="goods.sell.list"/>
+    <tab-control class="tab-Control" :titles="titles" @itemClick="itemClick" />
+    <goods-list :goods="goods[currentType].list"/>
     <ul>
       <li>列表1</li>
       <li>列表2</li>
@@ -102,14 +102,31 @@
     name: "Home",
     data() {
       return {
-        banners: getPicture(5),
-        recommends: getPicture(4),
+        index: 0,
+        banners: getPicture('300x150', 5),
+        recommends: getPicture('300x150', 4),
         recommendsText: ["1", "2", "3", "4"],
         titles: ["销量", "折扣", "最新"],
         goods: {
-          'sell': {list: getPicture(10)},
-          'discount': {list: getPicture(10)},
-          'latest': {list: getPicture(10)}
+          'sell': {list: getPicture('200x200', 10)},
+          'discount': {list: getPicture('200x200', 10)},
+          'latest': {list: getPicture('200x200', 10)}
+        },
+        currentType: 'sell'
+      }
+    },
+    methods: {
+      itemClick(index) {
+        switch(index) {
+          case 0:
+            this.currentType = 'sell';
+            break;
+          case 1:
+            this.currentType = 'discount';
+            break;
+          case 2:
+            this.currentType = 'latest';
+            break;
         }
       }
     }
