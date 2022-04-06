@@ -34,7 +34,7 @@ export default {
 <style scoped>
   .tabControl {
     display: flex;
-        background-color: #fff;
+    background-color: #fff;
   }
   .tabControl div {
     text-align: center;
